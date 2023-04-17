@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  db-postgres:
+    build: .
+    ports:
+    # 左が外側アクセス時、右はDockerコンテナからアクセスするとき
+      - 5430:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
